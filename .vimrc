@@ -14,9 +14,6 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
-" but tab indent PHP
-autocmd FileType php set noexpandtab
-
 " auto-start next line with comment header
 set formatoptions+=or
 
