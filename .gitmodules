@@ -13,9 +13,6 @@
 [submodule ".vim/bundle/vim-indexed-search"]
 	path = .vim/bundle/vim-indexed-search
 	url = https://github.com/henrik/vim-indexed-search.git
-[submodule ".vim/bundle/vim-bufferline"]
-	path = .vim/bundle/vim-bufferline
-	url = https://github.com/bling/vim-bufferline
 [submodule ".vim/bundle/vim-javascript-syntax"]
 	path = .vim/bundle/vim-javascript-syntax
 	url = https://github.com/jelera/vim-javascript-syntax.git
