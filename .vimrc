@@ -1,6 +1,9 @@
 call pathogen#infect()
 call pathogen#helptags()
 
+" force sensible to run first so we can override it
+runtime! plugin/sensible.vim
+
 syntax enable
 
 " for use with the default syntax highlighting
@@ -27,5 +30,4 @@ if v:version >= 702
 endif
 
 " gitgutter
-"highlight clear SignColumn
-highlight SignColumn ctermbg=black
+hi SignColumn ctermbg=black
