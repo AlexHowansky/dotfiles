@@ -90,7 +90,7 @@ function gs()
 
 function gf()
 {
-	git find ${*}
+    git find ${*}
 }
 
 function gcp()
