@@ -1,0 +1,50 @@
+[alias]
+    find = log --pretty=\"format:%Cgreen%H %Cblue%s\" --name-status --grep
+    branch-point = merge-base HEAD develop
+    diff-rebase = diff HEAD...develop
+    log-rebase = log --pretty=\"format:%Cgreen%H %Cblue%s\" --name-status HEAD..develop
+    purge = !git reset --hard && git clean -f -d && git pull
+
+[color]
+    branch = auto
+    diff = auto
+    grep = auto
+    interactive = auto
+    showbranch = auto
+    status = auto
+
+[color "branch"]
+    current = green
+    local = yellow
+
+[core]
+    pager = less -r
+
+[format]
+    signature = ""
+    subjectprefix = PATCH
+
+[gitflow "prefix"]
+    feature = feature/
+    release = release/
+    hotfix = hotfix/
+    support = support/
+    versiontag =
+
+[grep]
+    extendedRegexp = true
+
+[log]
+    date = rfc
+    decorate = short
+
+[push]
+    default = current
+
+[status]
+    relativePaths = true
+    showUntrackedFiles = all
+
+[user]
+    name = Alex Howansky
+    email = alex.howansky@gmail.com
