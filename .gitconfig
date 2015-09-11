@@ -1,9 +1,9 @@
 [alias]
-    find = log --pretty=\"format:%C(bold green)%H %C(bold yellow)%s%C(dim red)%d%n  %C(bold cyan)authored by %an on %ad, commited by %cn on %cd%C(dim white)\" --name-status --date short --grep
+    find = log --name-status --grep
     branch-point = merge-base HEAD develop
     diff-branch = diff develop...HEAD
     diff-rebase = diff HEAD...develop
-    log-rebase = log --pretty=\"format:%C(bold green)%H %C(bold blue)%s%C(dim red)%d%n  %C(bold cyan)authored by %an on %ad, commited by %cn on %cd%C(dim white)\" --name-status --date short HEAD..develop
+    log-rebase = log --name-status HEAD..develop
     purge = !git reset --hard && git clean -f -d && git pull && git remote prune origin && git gc --aggressive
 
 [color]
@@ -23,8 +23,8 @@
     quotepath = false
 
 [format]
+    pretty = my
     signature = ""
-    subjectprefix = PATCH
 
 [gitflow "prefix"]
     feature = feature/
@@ -37,8 +37,11 @@
     extendedRegexp = true
 
 [log]
-    date = rfc
+    date = iso
     decorate = short
+
+[pretty]
+    my = format:%C(bold green)%H %C(bold blue)%s%C(bold yellow)%d%n  %C(dim white)Author: %C(bold cyan)%an <%ae>%n    %C(dim white)Date: %C(bold cyan)%ad%C(bold white)%n
 
 [push]
     default = current
