@@ -1,9 +1,10 @@
 [alias]
-    find = log --pretty=\"format:%Cgreen%H %Cblue%s\" --name-status --grep
+    find = log --pretty=\"format:%C(bold green)%H %C(bold yellow)%s%C(dim red)%d%n  %C(bold cyan)authored by %an on %ad, commited by %cn on %cd%C(dim white)\" --name-status --date short --grep
     branch-point = merge-base HEAD develop
+    diff-branch = diff develop...HEAD
     diff-rebase = diff HEAD...develop
-    log-rebase = log --pretty=\"format:%Cgreen%H %Cblue%s\" --name-status HEAD..develop
-    purge = !git reset --hard && git clean -f -d && git pull
+    log-rebase = log --pretty=\"format:%C(bold green)%H %C(bold blue)%s%C(dim red)%d%n  %C(bold cyan)authored by %an on %ad, commited by %cn on %cd%C(dim white)\" --name-status --date short HEAD..develop
+    purge = !git reset --hard && git clean -f -d && git pull && git remote prune origin && git gc --aggressive
 
 [color]
     branch = auto
@@ -19,6 +20,7 @@
 
 [core]
     pager = less -r
+    quotepath = false
 
 [format]
     signature = ""
