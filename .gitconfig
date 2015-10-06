@@ -1,5 +1,5 @@
 [alias]
-    find = log --name-status --grep
+    find = log --name-status --regexp-ignore-case --grep
     branch-point = merge-base HEAD develop
     diff-branch = diff develop...HEAD
     diff-rebase = diff HEAD...develop
