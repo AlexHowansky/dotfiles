@@ -18,6 +18,11 @@ function gc()
     git commit ${*}
 }
 
+function gco()
+{
+    git checkout ${*}
+}
+
 function gd()
 {
     git diff ${*}
