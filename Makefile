@@ -16,6 +16,7 @@ completion:
 	curl -LSso ~/.git-flow-completion.bash https://raw.githubusercontent.com/bobthecow/git-flow-completion/master/git-flow-completion.bash
 
 powerline: init
+	mkdir -p ~/bin
 	cp config.py powerline-shell/
 	(cd powerline-shell && ./install.py)
 	cp powerline-shell/powerline-shell.py ~/bin
