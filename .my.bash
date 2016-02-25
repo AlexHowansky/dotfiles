@@ -13,6 +13,11 @@ function ga()
     git add ${*}
 }
 
+function gb()
+{
+    git branch ${*}
+}
+
 function gc()
 {
     git commit ${*}
