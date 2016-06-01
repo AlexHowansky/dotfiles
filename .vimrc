@@ -17,6 +17,9 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
+" ignore folding
+set nofoldenable
+
 " auto-start next line with comment header
 set formatoptions+=or
 
