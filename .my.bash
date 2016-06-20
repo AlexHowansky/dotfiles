@@ -63,6 +63,15 @@ function gcp()
     git cherry-pick -n -x ${*}
 }
 
+function unpack()
+{
+    [ -f ${1}.asc ] && { gpg --verify ${1}.asc || return 1; }
+    [ -f ${1}.sig ] && { gpg --verify ${1}.sig || return 1; }
+    tar xf ${1}
+    chmod -R go-rwxs ${1%.tar.*}
+    chown -R root:root ${1%.tar.*}
+}
+
 umask 077
 set -o vi
 
