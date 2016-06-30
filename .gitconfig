@@ -39,7 +39,7 @@
     error = bold red
 
 [core]
-    pager = less -r
+    pager = less
     quotepath = false
 
 [format]
