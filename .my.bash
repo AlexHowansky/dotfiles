@@ -69,8 +69,10 @@ function unpack()
     [ -f ${1} ] || { echo "No such package."; return 1; }
     DIR=${1%.tar.*}
     [ -d ${DIR} ] && { echo "Package already extracted."; return 1; }
-    [ -f ${1}.asc ] && { gpg --verify ${1}.asc || return 1; }
-    [ -f ${1}.sig ] && { gpg --verify ${1}.sig || return 1; }
+    [ -f ${1}.asc ] && {
+        gpg --keyserver pgpkeys.mit.edu --recv-key $(gpg --list-packets ${1}.asc | head -1 | cut -d" " -f6) || return 1;
+        gpg --verify ${1}.asc || return 1;
+    }
     tar xf ${1} || return 1
     [ -d ${DIR} ] || return 1
     chmod -R go-rwxs ${DIR}
