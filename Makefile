@@ -1,5 +1,5 @@
 install: update
-	cp -r .*.bash .gitconfig .inputrc .ssh .vim* ~
+	cp -ir .*.bash .gitconfig .inputrc .ssh .vim* .config ~
 	chmod go-rwx ~/.ssh/*
 
 update: init vim completion powerline

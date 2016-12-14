@@ -1,0 +1,30 @@
+[global_config]
+  enabled_plugins = ,
+  homogeneous_tabbar = False
+  scroll_tabbar = True
+  tab_position = hidden
+  window_state = maximise
+[keybindings]
+  help =
+  page_up = Page_Up
+  page_down = Page_Down
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    allow_bold = False
+    copy_on_selection = True
+    cursor_color = "#aaaaaa"
+    font = Input 16
+    foreground_color = "#ffffff"
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False
+    word_chars = -.~_/
