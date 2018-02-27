@@ -64,7 +64,8 @@ function unpack()
     DIR=${1%.tar.*}
     [ -d ${DIR} ] && { echo "Package already extracted."; return 1; }
     [ -f ${1}.asc ] && {
-        gpg --keyserver pgpkeys.mit.edu --recv-key $(gpg --list-packets ${1}.asc | head -1 | cut -d" " -f6) || return 1;
+        gpg --list-keys --with-colons | grep "^pub:" | cut -d: -f5 | grep -q ${KEY} || \
+            gpg --keyserver pgpkeys.mit.edu --recv-key ${KEY} || return 1;
         gpg --verify ${1}.asc || return 1;
     }
     tar xf ${1} || return 1
