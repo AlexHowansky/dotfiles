@@ -1,6 +1,6 @@
 SEGMENTS = [
 #    'virtual_env',
-#    'hostname',
+    'hostname',
     'username',
 #    'ssh',
     'cwd',
