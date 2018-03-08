@@ -1,5 +1,5 @@
 function _update_ps1() {
-    export PS1="$(~/bin/powerline-shell.py --cwd-mode plain --mode patched --colorize-hostname $? 2> /dev/null)"
+    export PS1="$(~/bin/powerline-shell.py --cwd-mode plain --mode patched $? 2> /dev/null)"
 }
 
 function ga()
