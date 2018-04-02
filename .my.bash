@@ -65,7 +65,7 @@ function unpack()
     [ -d ${DIR} ] && { echo "Package already extracted."; return 1; }
     [ -f ${1}.asc ] && {
         KEY=$(gpg --list-packets ${1}.asc | head -1 | grep -oE '[^ ]+$')
-        gpg --list-keys --with-colons | grep "^pub:" | cut -d: -f5 | grep -q ${KEY} || \
+        gpg --list-keys --with-colons | grep "^[ps]ub:" | cut -d: -f5 | grep -q ${KEY} || \
             gpg --keyserver pgpkeys.mit.edu --recv-key ${KEY} || return 1;
         gpg --verify ${1}.asc || return 1;
     }
