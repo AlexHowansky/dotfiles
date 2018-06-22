@@ -66,7 +66,7 @@ function unpack()
     [ -f ${1}.asc ] && {
         KEY=$(gpg --list-packets ${1}.asc | grep ':signature packet:' | grep -oE '[^ ]+$')
         gpg --list-keys --with-colons | grep "^[ps]ub:" | cut -d: -f5 | grep -q ${KEY} || \
-            gpg --keyserver pgpkeys.mit.edu --recv-key ${KEY} || return 1;
+            gpg --keyserver hkps://pgp.mit.edu:443 --recv-key ${KEY} || return 1;
         gpg --verify ${1}.asc || return 1;
     }
     tar xf ${1} || return 1
