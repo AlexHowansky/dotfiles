@@ -1,5 +1,5 @@
 function _update_ps1() {
-    export PS1="$(~/bin/powerline-shell.py --cwd-mode plain --mode patched $? 2> /dev/null)"
+    PS1=$(~/bin/powerline-shell.py --cwd-mode plain --mode patched $?)
 }
 
 function ga()
@@ -92,4 +92,8 @@ alias ..='cd ..'
 [ -f ~/.git-flow-completion.bash ] && . ~/.git-flow-completion.bash
 
 export EDITOR=/usr/bin/vim
-export PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+
+if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]];
+then
+    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+fi
