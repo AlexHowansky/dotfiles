@@ -34,6 +34,9 @@
 [submodule ".vim/bundle/vim-syntax-for-PHP"]
 	path = .vim/bundle/vim-syntax-for-PHP
 	url = https://github.com/2072/vim-syntax-for-PHP.git
+[submodule ".vim/bundle/twig"]
+	path = .vim/bundle/twig
+	url = https://github.com/nelsyeung/twig.vim.git
 [submodule "powerline-shell"]
 	path = powerline-shell
 	url = https://github.com/milkbikis/powerline-shell.git
