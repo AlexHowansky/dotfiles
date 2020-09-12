@@ -57,6 +57,11 @@ function gcp()
     git cherry-pick -n -x ${*}
 }
 
+function title()
+{
+    echo -en "\e]2;$1\a"
+}
+
 function unpack()
 {
     [ -z ${1} ] && { echo "Usage: ${0} <package>"; return 1; }
