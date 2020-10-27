@@ -22,6 +22,11 @@ function gco()
     git checkout ${*}
 }
 
+function gcp()
+{
+    git cherry-pick -n -x ${*}
+}
+
 function gd()
 {
     git diff ${*}
@@ -30,6 +35,11 @@ function gd()
 function gdc()
 {
     git diff --cached ${*}
+}
+
+function gf()
+{
+    git find ${*}
 }
 
 function gl()
@@ -47,14 +57,9 @@ function gs()
     git status
 }
 
-function gf()
+function gu()
 {
-    git find ${*}
-}
-
-function gcp()
-{
-    git cherry-pick -n -x ${*}
+    git reset --soft HEAD~1
 }
 
 function title()
