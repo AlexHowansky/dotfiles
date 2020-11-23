@@ -1,9 +1,6 @@
 [alias]
     find = log --name-status --regexp-ignore-case --grep
     branch-point = merge-base HEAD develop
-    diff-branch = diff develop...HEAD
-    diff-rebase = diff HEAD...develop
-    log-rebase = log --name-status HEAD..develop
     purge = !git reset --hard && git clean -f -d && git pull && git remote prune origin && git gc --aggressive
 
 [color "branch"]
