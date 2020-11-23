@@ -31,11 +31,11 @@ function gdc() {
 }
 
 function gdb() {
-    gd ${1:-develop}...HEAD
+    gd develop...HEAD ${*}
 }
 
 function gdr() {
-    gd HEAD...${1:-develop}
+    gd HEAD...develop ${*}
 }
 
 function gf() {
@@ -47,11 +47,11 @@ function gl() {
 }
 
 function glb() {
-    gl ${1:-develop}...HEAD
+    gl develop..HEAD ${*}
 }
 
 function glr() {
-    gl HEAD..${1:-develop}
+    gl HEAD..develop ${*}
 }
 
 function gp() {
