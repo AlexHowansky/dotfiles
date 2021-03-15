@@ -58,6 +58,10 @@ function gp() {
     git pull
 }
 
+function grs() {
+    git restore --staged ${*}
+}
+
 function gs() {
     git status
 }
