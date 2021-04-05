@@ -1,5 +1,5 @@
 function _update_ps1() {
-    PS1=$(~/bin/powerline-shell.py --cwd-mode plain --mode patched $?)
+    PS1=$(~/.local/bin/powerline-shell $?)
 }
 
 function ga() {
@@ -109,7 +109,7 @@ alias ..='cd ..'
 
 export EDITOR=/usr/bin/vim
 
-if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]];
+if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]
 then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi

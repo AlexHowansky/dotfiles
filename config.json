@@ -1,0 +1,15 @@
+{
+    "segments": [
+        "username",
+        "cwd",
+        "git",
+        "set_term_title"
+    ],
+    "cwd": {
+        "mode": "plain"
+    },
+    "theme": "default",
+    "vcs": {
+        "show_symbol": true
+    }
+}

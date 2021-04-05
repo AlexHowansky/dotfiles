@@ -1,15 +1,15 @@
-install: update
-	cp -i .*.bash ~
+install: submodules
+	cp -i .my.bash ~
 	cp -r .gitconfig .inputrc .ssh .vim* .config ~
 	chmod go-rwx ~/.ssh/*
 
-update: init vim completion powerline
+submodules: init vim completion powerline
 
 init:
 	git submodule init
 	git submodule update
 
-vim: 
+vim: init
 	mkdir -p ~/.vim/autoload
 	curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
@@ -18,7 +18,9 @@ completion:
 	curl -LSso ~/.git-flow-completion.bash https://raw.githubusercontent.com/bobthecow/git-flow-completion/master/git-flow-completion.bash
 
 powerline: init
-	mkdir -p ~/bin
-	cp config.py powerline-shell/
-	(cd powerline-shell && ./install.py)
-	cp powerline-shell/powerline-shell.py ~/bin
+	mkdir -p ~/.config/powerline-shell/
+	cp config.json ~/.config/powerline-shell/
+	(cd powerline-shell && ./setup.py install --user)
+
+update:
+	git submodule foreach git pull origin master
