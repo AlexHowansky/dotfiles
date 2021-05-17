@@ -67,13 +67,18 @@ function gs() {
 }
 
 function gsu() {
+    if [ -z "${GSU_REPOS}" ]
+    then
+        echo "Define GSU_REPOS to contain your desired repositories for reporting."
+        return
+    fi
     pushd . >/dev/null
     [ $(date +%a) = "Mon" ] && DAYS=3 || DAYS=1
-    for REPO in api mdbr scp-legacy scp wss
+    for REPO in ${GSU_REPOS}
     do
-        cd ~/git/${REPO}
-        echo ${REPO}
-        git standup -d ${1:${DAYS}}
+        cd ${REPO}
+        basename ${REPO}
+        git standup -d ${1:-${DAYS}}
         echo
     done
     popd >/dev/null
