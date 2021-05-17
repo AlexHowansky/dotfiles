@@ -66,6 +66,19 @@ function gs() {
     git status
 }
 
+function gsu() {
+    pushd . >/dev/null
+    [ $(date +%a) = "Mon" ] && DAYS=3 || DAYS=1
+    for REPO in api mdbr scp-legacy scp wss
+    do
+        cd ~/git/${REPO}
+        echo ${REPO}
+        git standup -d ${1:${DAYS}}
+        echo
+    done
+    popd >/dev/null
+}
+
 function gu() {
     git reset --soft HEAD~1
 }
