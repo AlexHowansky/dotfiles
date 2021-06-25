@@ -72,13 +72,20 @@ function gsu() {
         echo "Define GSU_REPOS to contain your desired repositories for reporting."
         return
     fi
+    declare -A DAYS
+    DAYS["Mon"]=3
+    DAYS["Tue"]=1
+    DAYS["Wed"]=1
+    DAYS["Thu"]=1
+    DAYS["Fri"]=2
+    DAYS["Sat"]=1
+    DAYS["Sun"]=1
     pushd . >/dev/null
-    [ $(date +%a) = "Mon" ] && DAYS=3 || DAYS=1
     for REPO in ${GSU_REPOS}
     do
         cd ${REPO}
         basename ${REPO}
-        git standup -d ${1:-${DAYS}}
+        git standup -d ${1:-${DAYS[$(date +%a)]}}
         echo
     done
     popd >/dev/null
