@@ -85,6 +85,7 @@ function gsu() {
     do
         cd ${REPO}
         basename ${REPO}
+        git pull --quiet
         git standup -d ${1:-${DAYS[$(date +%a)]}}
         echo
     done
