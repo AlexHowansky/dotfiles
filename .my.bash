@@ -77,9 +77,9 @@ function gsu() {
     DAYS["Tue"]=1
     DAYS["Wed"]=1
     DAYS["Thu"]=1
-    DAYS["Fri"]=2
+    DAYS["Fri"]=1
     DAYS["Sat"]=1
-    DAYS["Sun"]=1
+    DAYS["Sun"]=2
     pushd . >/dev/null
     for REPO in ${GSU_REPOS}
     do
