@@ -122,7 +122,11 @@ function unpack() {
 umask 077
 set -o vi
 
-[ "$TERM" != "dumb" ] && alias ls='ls --color=auto'
+if [ "$TERM" != "dumb" ]
+then
+    alias ls='ls --color=auto'
+    title $(whoami)@$(hostname)
+fi
 
 alias diff='colordiff'
 alias cls='clear'
@@ -139,5 +143,3 @@ if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]
 then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
-
-title $(whoami)@$(hostname)
