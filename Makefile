@@ -22,5 +22,5 @@ powerline: init
 	cp config.json ~/.config/powerline-shell/
 	(cd powerline-shell && ./setup.py install --user)
 
-update:
+update: init
 	git submodule foreach git pull origin master
