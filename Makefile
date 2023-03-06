@@ -15,7 +15,7 @@ vim: init
 
 completion:
 	curl -LSso ~/.git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
-	curl -LSso ~/.git-flow-completion.bash https://raw.githubusercontent.com/bobthecow/git-flow-completion/master/git-flow-completion.bash
+	bash -c '[ "`type -t composer`" == "file" ] && composer completion > ~/.composer-completion.bash || true'
 
 powerline: init
 	mkdir -p ~/.config/powerline-shell/

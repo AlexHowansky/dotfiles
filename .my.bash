@@ -135,7 +135,7 @@ alias vi='vim'
 alias ..='cd ..'
 
 [ -f ~/.git-completion.bash ] && . ~/.git-completion.bash
-[ -f ~/.git-flow-completion.bash ] && . ~/.git-flow-completion.bash
+[ -f ~/.composer-completion.bash ] && . ~/.composer-completion.bash
 
 export EDITOR=/usr/bin/vim
 
