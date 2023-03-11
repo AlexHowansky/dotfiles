@@ -53,6 +53,9 @@
 [grep]
     extendedRegexp = true
 
+[init]
+    defaultBranch = main
+
 [log]
     date = iso
     decorate = short
