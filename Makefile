@@ -23,4 +23,4 @@ powerline: init
 	(cd powerline-shell && ./setup.py install --user)
 
 update: init
-	git submodule foreach git pull origin master
+	git submodule update --recursive --remote --init
