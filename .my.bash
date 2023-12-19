@@ -2,6 +2,22 @@ function _update_ps1() {
     PS1=$(~/.local/bin/powerline-shell $?)
 }
 
+function cb() {
+    composer bump
+}
+
+function ci() {
+    composer install ${*}
+}
+
+function cin() {
+    composer install --no-scripts ${*}
+}
+
+function cu() {
+    composer update ${*}
+}
+
 function ga() {
     git add ${*}
 }
