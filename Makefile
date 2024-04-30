@@ -18,6 +18,7 @@ completion:
 	bash -c '[ "`type -t composer`" == "file" ] && composer completion > ~/.composer-completion.bash || true'
 
 powerline: init
+	./patch.sh
 	mkdir -p ~/.config/powerline-shell/
 	cp config.json ~/.config/powerline-shell/
 	(cd powerline-shell && ./setup.py install --user)
