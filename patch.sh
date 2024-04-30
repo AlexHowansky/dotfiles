@@ -7,7 +7,8 @@ SMALLER=$(echo -e "${INSTALLED}\n${REQUIRED}" | sort -V | head -1)
 if [ "${SMALLER}" == "${REQUIRED}" ]
 then
     echo "You have Python >= 3.11.0, patching"
-	patch -d powerline-shell -N -p1 < powerline-shell.patch
+    patch -d powerline-shell -N -p1 < powerline-shell.patch
+    true # Swallow a failure exit code if we tried to re-apply the patch.
 else
     echo "You have Python < 3.11.0, skipping patch"
 fi
