@@ -28,6 +28,7 @@
 [submodule ".vim/bundle/vim-gitgutter"]
 	path = .vim/bundle/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
+	branch = main
 [submodule ".vim/bundle/vim-json"]
 	path = .vim/bundle/vim-json
 	url = https://github.com/elzr/vim-json.git
@@ -43,3 +44,4 @@
 [submodule ".vim/bundle/toml"]
 	path = .vim/bundle/toml
 	url = https://github.com/cespare/vim-toml.git
+	branch = main
