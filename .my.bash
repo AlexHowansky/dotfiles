@@ -85,7 +85,8 @@ function gs() {
 function gsu() {
     if [ -z "${GSU_REPOS}" ]
     then
-        echo "Define GSU_REPOS to contain your desired repositories for reporting."
+        echo "Define GSU_REPOS to contain a space-separated list of your desired"
+        echo "repositories for reporting, these will be prefixed with '~/git/'."
         return
     fi
     declare -A DAYS
@@ -99,7 +100,7 @@ function gsu() {
     pushd . >/dev/null
     for REPO in ${GSU_REPOS}
     do
-        cd ${REPO}
+        cd ~/git/${REPO}
         basename ${REPO}
         git pull --quiet
         git standup -d ${1:-${DAYS[$(date +%a)]}}
@@ -155,7 +156,12 @@ alias ..='cd ..'
 
 export EDITOR=/usr/bin/vim
 
-if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]
+if [ -n "$(type -p starship)" ]
 then
-    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+    eval "$(starship init bash)"
+else
+    if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]
+    then
+        PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+    fi
 fi

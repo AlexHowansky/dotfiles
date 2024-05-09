@@ -1,0 +1,52 @@
+add_newline = false
+format = '$character$username[](bg:green fg:grey20)$directory[](fg:green bg:blue)$git_branch$git_commit$git_status[ ](fg:blue bg:black)'
+palette = 'alex'
+
+[palettes.alex]
+black = '#000000'
+blue = '#3575a8'
+cream = '#fbf1c7'
+green = '#487d4a'
+grey20 = '#202020'
+grey80 = '#808080'
+orange = '#d65d0e'
+purple = '#b16286'
+red = '#cc241d'
+white = '#ffffff'
+yellow = '#d79921'
+
+[character]
+disabled = false
+format = '$symbol'
+success_symbol = ''
+error_symbol = '💀 '
+
+[directory]
+format = '[ $path]($style)[ $read_only]($read_only_style)'
+read_only = '🔒'
+read_only_style = 'fg:yellow bg:green'
+style = 'fg:white bg:green'
+truncate_to_repo = false
+truncation_length = 0
+
+[git_branch]
+format = '[ $symbol $branch]($style)'
+style = 'fg:white bg:blue'
+symbol = ''
+
+[git_commit]
+disabled = false
+format = '[ $hash$tag]($style)'
+style = 'fg:white bg:blue'
+tag_disabled = false
+tag_symbol = ' 🏷 '
+
+[git_status]
+style = 'fg:white bg:blue'
+format = '[ ($all_status$ahead_behind )]($style)'
+
+[username]
+format = '[ $user ]($style)'
+show_always = true
+style_root = 'fg:red bg:grey20'
+style_user = 'fg:cream bg:grey20'
