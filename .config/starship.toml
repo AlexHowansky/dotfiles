@@ -7,7 +7,6 @@ black = '#000000'
 blue = '#3575a8'
 cream = '#fbf1c7'
 green = '#487d4a'
-grey10 = '#101010'
 grey20 = '#202020'
 grey80 = '#808080'
 orange = '#d65d0e'
@@ -34,7 +33,7 @@ tag_symbol = ' 🏷 '
 format = '[ ($all_status$ahead_behind )](fg:white bg:blue)'
 
 [hostname]
-format = '[ @$hostname ](fg:orange bg:grey10)[](bg:grey20 fg:grey10)'
+format = '[ @$hostname ](fg:orange bg:black)[](bg:grey20 fg:black)'
 ssh_only = true
 
 [username]
