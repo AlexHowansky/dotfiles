@@ -1,5 +1,5 @@
 add_newline = false
-format = '$character$username[](bg:green fg:grey20)$directory[](fg:green bg:blue)$git_branch$git_commit$git_status[ ](fg:blue bg:black)'
+format = '$hostname$username$directory$git_branch$git_commit$git_status[](fg:blue bg:black) '
 palette = 'alex'
 
 [palettes.alex]
@@ -7,6 +7,7 @@ black = '#000000'
 blue = '#3575a8'
 cream = '#fbf1c7'
 green = '#487d4a'
+grey10 = '#101010'
 grey20 = '#202020'
 grey80 = '#808080'
 orange = '#d65d0e'
@@ -15,38 +16,29 @@ red = '#cc241d'
 white = '#ffffff'
 yellow = '#d79921'
 
-[character]
-disabled = false
-format = '$symbol'
-success_symbol = ''
-error_symbol = '💀 '
-
 [directory]
-format = '[ $path]($style)[ $read_only]($read_only_style)'
+format = '[ $path](fg:white bg:green)[ $read_only](fg:yellow bg:green)[](fg:green bg:blue)'
 read_only = '🔒'
-read_only_style = 'fg:yellow bg:green'
-style = 'fg:white bg:green'
 truncate_to_repo = false
-truncation_length = 0
 
 [git_branch]
-format = '[ $symbol $branch]($style)'
-style = 'fg:white bg:blue'
-symbol = ''
+format = '[  $branch](fg:white bg:blue)'
 
 [git_commit]
 disabled = false
-format = '[ $hash$tag]($style)'
-style = 'fg:white bg:blue'
+format = '[ $hash$tag](fg:white bg:blue)'
 tag_disabled = false
 tag_symbol = ' 🏷 '
 
 [git_status]
-style = 'fg:white bg:blue'
-format = '[ ($all_status$ahead_behind )]($style)'
+format = '[ ($all_status$ahead_behind )](fg:white bg:blue)'
+
+[hostname]
+format = '[ @$hostname ](fg:orange bg:grey10)[](bg:grey20 fg:grey10)'
+ssh_only = true
 
 [username]
-format = '[ $user ]($style)'
+format = '[ $user ]($style)[](bg:green fg:grey20)'
 show_always = true
 style_root = 'fg:red bg:grey20'
 style_user = 'fg:cream bg:grey20'
