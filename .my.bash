@@ -113,8 +113,18 @@ function gu() {
     git reset --soft HEAD~1
 }
 
+function phpv() {
+    sudo -- sh -c "
+        for P in php php-config phpize phar phar.phar
+        do
+            update-alternatives --set \$P /usr/bin/\${P}${1}
+        done >/dev/null
+        php -v
+    "
+}
+
 function title() {
-    echo -en "\e]2;$1\a"
+    echo -en "\e]2;${1}\a"
 }
 
 function unpack() {
@@ -148,6 +158,12 @@ fi
 alias diff='colordiff'
 alias cls='clear'
 alias grpe='grep'
+alias php74='phpv 7.4'
+alias php80='phpv 8.0'
+alias php81='phpv 8.1'
+alias php82='phpv 8.2'
+alias php83='phpv 8.3'
+alias php84='phpv 8.4'
 alias vi='vim'
 alias ..='cd ..'
 
