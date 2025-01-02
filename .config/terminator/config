@@ -1,6 +1,6 @@
 [global_config]
   window_state = maximise
-  borderless = True
+  borderless = False
   tab_position = hidden
   scroll_tabbar = True
   homogeneous_tabbar = False
