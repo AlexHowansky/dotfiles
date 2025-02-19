@@ -38,9 +38,6 @@
 [submodule ".vim/bundle/twig"]
 	path = .vim/bundle/twig
 	url = https://github.com/nelsyeung/twig.vim.git
-[submodule "powerline-shell"]
-	path = powerline-shell
-	url = https://github.com/b-ryan/powerline-shell.git
 [submodule ".vim/bundle/toml"]
 	path = .vim/bundle/toml
 	url = https://github.com/cespare/vim-toml.git
