@@ -59,7 +59,7 @@ function gf() {
 }
 
 function gl() {
-    git log --name-status ${*}
+    git log --topo-order --name-status ${*}
 }
 
 function glb() {
