@@ -14,8 +14,16 @@ function cin() {
     composer install --no-scripts ${*}
 }
 
+function co() {
+    composer outdated ${*}
+}
+
 function cu() {
     composer update ${*}
+}
+
+function cud() {
+    composer update --dry-run ${*}
 }
 
 function ga() {
@@ -155,7 +163,19 @@ then
     title $(whoami)@$(hostname)
 fi
 
-alias diff='colordiff'
+if [ -n "$(type -p diff-so-fancy)" ]
+then
+    function dsf() {
+        /bin/diff -u $1 $2 | diff-so-fancy
+    }
+    alias diff='dsf'
+else
+    if [ -n "$(type -p colordiff)" ]
+    then
+        alias diff='colordiff'
+    fi
+fi
+
 alias cls='clear'
 alias grpe='grep'
 alias php74='phpv 7.4'
