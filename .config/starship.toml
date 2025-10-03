@@ -1,5 +1,5 @@
 add_newline = false
-format = '$hostname$username$directory$git_branch$git_commit$git_status[](fg:blue bg:black) '
+format = '$docker_context$hostname$username$directory$git_branch$git_commit$git_status[](fg:blue bg:black) '
 palette = 'alex'
 
 [palettes.alex]
@@ -19,6 +19,10 @@ yellow = '#d79921'
 format = '[ $path](fg:white bg:green)[ $read_only](fg:yellow bg:green)[](fg:green bg:blue)'
 read_only = '🔒'
 truncate_to_repo = false
+
+[docker_context]
+format = '[ 🐋 $context ](fg:orange bg:black)[](bg:grey20 fg:black)'
+only_with_files = false
 
 [git_branch]
 format = '[  $branch](fg:white bg:blue)'
