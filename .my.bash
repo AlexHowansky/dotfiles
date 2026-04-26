@@ -151,7 +151,6 @@ function unpack() {
     chmod -R go-rwxs ${DIR}
     chown -R root:root ${DIR}
     rm -f ${1} ${1}.asc ${1}.sig
-    cd ${DIR}
 }
 
 umask 077
