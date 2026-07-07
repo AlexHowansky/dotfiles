@@ -1,5 +1,12 @@
-call pathogen#infect()
-call pathogen#helptags()
+call plug#begin()
+Plug 'airblade/vim-gitgutter'
+Plug 'henrik/vim-indexed-search'
+Plug 'preservim/nerdtree'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-sensible'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-polyglot/vim-polyglot'
+call plug#end()
 
 " force sensible to run first so we can override it
 runtime! plugin/sensible.vim
@@ -22,6 +29,9 @@ set nofoldenable
 
 " auto-start next line with comment header
 set formatoptions+=or
+
+" but turn off auto-indent for new line comments
+autocmd FileType yaml,yml setlocal indentkeys-=0#
 
 " remember cursor position
 set viminfo='10,\"100,:20,%,n~/.viminfo

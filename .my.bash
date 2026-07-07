@@ -1,7 +1,3 @@
-function _update_ps1() {
-    PS1=$(~/.local/bin/powerline-shell $?)
-}
-
 function cb() {
     composer bump
 }
@@ -195,9 +191,4 @@ export EDITOR=/usr/bin/vim
 if [ -n "$(type -p starship)" ]
 then
     eval "$(starship init bash)"
-else
-    if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]
-    then
-        PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-    fi
 fi
