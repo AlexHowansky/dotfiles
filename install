@@ -3,32 +3,26 @@
 set -e
 
 echo -n "Installing dot files... "
-if [ -f ~/.my.bash ]
-then
-    if ! cmp -s ~/.my.bash .my.bash
-    then
-        echo ~/.my.bash has been modified, skipping install
-    fi
-else
-    cp .my.bash ~
-fi
-cp .gitconfig .inputrc .vimrc ~
+cp .gitconfig .inputrc .my.bash .vimrc ~
 cp -r .config .ssh ~
 chmod go-rwx ~/.ssh/*
 echo "done."
 
 echo "Installing VIM plugins:"
 curl -LSso ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-vim +PlugInstall +PlugClean! +qall >/dev/null 2>&1
+vim +PlugUpdate +PlugClean! +qall >/dev/null 2>&1
 ls ~/.vim/plugged/ | sed 's/^/    /'
 
 echo -n "Installing git autocompletion... "
 curl -LSso ~/.git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
 echo "done."
 
-echo -n "Installing Composer autocompletion... "
-composer completion > ~/.composer-completion.bash
-echo "done."
+if [ "$(type -t composer)" == "file" ]
+then
+    echo -n "Detected composer, installing autocompletion... "
+    composer completion > ~/.composer-completion.bash
+    echo "done."
+fi
 
 echo -n "Installing Starship... "
 curl -LSs https://starship.rs/install.sh | sh
