@@ -6,6 +6,7 @@ echo -n "Installing dot files... "
 cp .gitconfig .inputrc .my.bash .vimrc ~
 cp -r .config .ssh ~
 chmod go-rwx ~/.ssh/*
+mkdir -p ~/.vim/undo
 echo "done."
 
 echo "Installing VIM plugins:"
