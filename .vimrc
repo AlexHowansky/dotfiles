@@ -45,5 +45,8 @@ endif
 " gitgutter
 hi SignColumn ctermbg=black
 
-" JSON
+" show quotes in JSON files
 let g:vim_json_syntax_conceal = 0
+
+" apply sh highlighting to all env file types
+autocmd BufRead,BufNewFile .env.* set filetype=sh
