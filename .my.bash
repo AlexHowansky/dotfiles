@@ -180,6 +180,7 @@ alias php82='phpv 8.2'
 alias php83='phpv 8.3'
 alias php84='phpv 8.4'
 alias php85='phpv 8.5'
+alias php86='phpv 8.6'
 alias vi='vim'
 alias ..='cd ..'
 
