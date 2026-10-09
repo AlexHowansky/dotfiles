@@ -3,7 +3,7 @@
 set -e
 
 echo -n "Installing dot files... "
-cp .gitconfig .inputrc .my.bash .vimrc ~
+cp .gitconfig .inputrc .my.bash .sqliterc .vimrc ~
 cp -r .config .ssh ~
 chmod go-rwx ~/.ssh/*
 mkdir -p ~/.vim/undo
